@@ -329,6 +329,7 @@ absl::Status UmpPipeline::RunImpl()
 				cv::putText(output_mif_view, *stat, cv::Point(10, 20), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(0, 255, 0));
 
 				cv::cvtColor(output_mif_view, output_mif_view, cv::COLOR_RGB2BGR);
+				cv::setWindowProperty(kWindowName, cv::WND_PROP_TOPMOST, 1);
 				cv::imshow(kWindowName, output_mif_view);
 				cv::waitKey(1); // required for cv::imshow
 			}
